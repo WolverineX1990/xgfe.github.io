@@ -298,9 +298,9 @@
     
       <category term="javascript" scheme="http://xgfe.github.io/tags/javascript/"/>
     
-      <category term="性能优化" scheme="http://xgfe.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
       <category term="debounce&amp;throttle" scheme="http://xgfe.github.io/tags/debounce-throttle/"/>
+    
+      <category term="性能优化" scheme="http://xgfe.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
@@ -473,9 +473,9 @@
       <category term="Observable" scheme="http://xgfe.github.io/categories/tianzhen/Observable/"/>
     
     
-      <category term="Observable" scheme="http://xgfe.github.io/tags/Observable/"/>
-    
       <category term="RxJS" scheme="http://xgfe.github.io/tags/RxJS/"/>
+    
+      <category term="Observable" scheme="http://xgfe.github.io/tags/Observable/"/>
     
       <category term="Functional Reactive Programming" scheme="http://xgfe.github.io/tags/Functional-Reactive-Programming/"/>
     
