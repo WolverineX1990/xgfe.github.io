@@ -53,6 +53,7 @@
 </script>
 
   <title> xgfe </title>
+  <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -148,7 +149,7 @@
       
       <!-- slide-links added by felix -->
       <li class="menu-item menu-item-slides" style="opacity: 1; transform: translateY(0px);">
-        <a href="http://xgfe.github.io/Basics/" target="_blank" rel="section">
+        <a href="https://xgfe.github.io/Basics/" target="_blank" rel="section">
           <i class="menu-item-icon icon-next-slides"></i> <br>
           Basics
         </a>
@@ -197,8 +198,8 @@
           
           
             
-              <a class="post-title-link" href="/2017/05/03/LexHuang/web-worker/" itemprop="url">
-                web worker详解
+              <a class="post-title-link" href="/2017/09/20/Young/DOM-size/" itemprop="url">
+                由一个表格需求引发的blog-DOM中的尺寸属性
               </a>
             
           
@@ -208,8 +209,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-05-03T11:30:00+08:00" content="2017-05-03">
-            2017-05-03
+          <time itemprop="dateCreated" datetime="2017-09-20T16:37:00+08:00" content="2017-09-20">
+            2017-09-20
           </time>
         </span>
 
@@ -218,8 +219,8 @@
             &nbsp; | &nbsp; 作者
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/LexHuang/" itemprop="url" rel="index">
-                  <span itemprop="name">LexHuang</span>
+                <a href="/categories/Young/" itemprop="url" rel="index">
+                  <span itemprop="name">Young</span>
                 </a>
               </span>
 
@@ -239,9 +240,9 @@
           <span class="post-tags">
             &nbsp; | &nbsp;
             
-              <a href="/tags/javascript/" rel="tag"><i class="icon-next-tags"></i>javascript</a>
+              <a href="/tags/DOM/" rel="tag"><i class="icon-next-tags"></i>DOM</a>
             
-              <a href="/tags/web-api/" rel="tag"><i class="icon-next-tags"></i>web api</a>
+              <a href="/tags/跨浏览器属性/" rel="tag"><i class="icon-next-tags"></i>跨浏览器属性</a>
             
           </span>
         
@@ -255,18 +256,9 @@
 
       
         
-          <p><img src="http://p0.meituan.net/kuailv/678b764c4d0bff4629f20e748357481c29564.jpg" alt="" title="web worker"><br>Web Workers 是一种不在页面线程而是在后台线程中执行脚本的技术。Web Workers 的优点在于可以将计算密集型和I/O密集型的操作放在一个单独的后台线程中执行，进而使得主线程（通常是UI线程）能够不被阻塞，也不会被减缓。</p>
-<p>本博客主要内容分为七部分：</p>
-<ul>
-<li>Web Worker 概念及使用</li>
-<li>Web worker的生命周期和处理模型</li>
-<li>错误处理</li>
-<li>数据传输</li>
-<li>线程安全</li>
-<li>内容安全策略</li>
-</ul>
+          <p>最近数据平台有一个需求，页面滚动的时候，表格的表头悬停在页面顶部，实现的时候遇到了不少问题，也尝试了几种方案，下一篇blog会尝试分享一下，由于涉及到较多的DOM操作，尤其是各种尺寸位置属性，所以对这些尺寸属性的含义做了一些总结。</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/05/03/LexHuang/web-worker/#more" rel="contents">
+            <a class="btn" href="/2017/09/20/Young/DOM-size/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -298,8 +290,8 @@
           
           
             
-              <a class="post-title-link" href="/2017/05/03/zhouxiong/Thrift/" itemprop="url">
-                远程调用框架Thrift分享
+              <a class="post-title-link" href="/2017/09/17/ivanchou/layout-with-constraintlayout-by-programming/" itemprop="url">
+                ConstraintLayout 采用代码方式布局用法简介
               </a>
             
           
@@ -309,8 +301,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-05-03T00:00:00+08:00" content="2017-05-03">
-            2017-05-03
+          <time itemprop="dateCreated" datetime="2017-09-17T00:00:00+08:00" content="2017-09-17">
+            2017-09-17
           </time>
         </span>
 
@@ -319,572 +311,8 @@
             &nbsp; | &nbsp; 作者
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/zhouxiong/" itemprop="url" rel="index">
-                  <span itemprop="name">zhouxiong</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-
-        <!-- tags 挪动位置 -->
-        
-          <span class="post-tags">
-            &nbsp; | &nbsp;
-            
-              <a href="/tags/Thrift/" rel="tag"><i class="icon-next-tags"></i>Thrift</a>
-            
-              <a href="/tags/NodeJS/" rel="tag"><i class="icon-next-tags"></i>NodeJS</a>
-            
-          </span>
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="Thrift"><a href="#Thrift" class="headerlink" title="Thrift"></a>Thrift</h2><p>Thrift是一个跨语言的远程调用框架(RPC)，它允许你根据IDL规则定义数据类型和服务接口，然后通过Thrift编译器生成跨语言的client和server端，目前支持市面上所有的主流语言。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/05/03/zhouxiong/Thrift/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2017/04/21/shsoul/router/" itemprop="url">
-                如何实现一套iOS-router
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2017-04-21T12:10:21+08:00" content="2017-04-21">
-            2017-04-21
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 作者
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/shsoul/" itemprop="url" rel="index">
-                  <span itemprop="name">shsoul</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-
-        <!-- tags 挪动位置 -->
-        
-          <span class="post-tags">
-            &nbsp; | &nbsp;
-            
-              <a href="/tags/iOS/" rel="tag"><i class="icon-next-tags"></i>iOS</a>
-            
-              <a href="/tags/router/" rel="tag"><i class="icon-next-tags"></i>router</a>
-            
-          </span>
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>本文主要是提供一套iOS-router的解决方案。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/04/21/shsoul/router/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2017/03/23/lrdcq/ios-crash-catch-and-analyze/" itemprop="url">
-                iOS Crash栈的捕获和分析
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2017-03-23T12:48:00+08:00" content="2017-03-23">
-            2017-03-23
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 作者
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/lrdcq/" itemprop="url" rel="index">
-                  <span itemprop="name">lrdcq</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-
-        <!-- tags 挪动位置 -->
-        
-          <span class="post-tags">
-            &nbsp; | &nbsp;
-            
-              <a href="/tags/iOS/" rel="tag"><i class="icon-next-tags"></i>iOS</a>
-            
-              <a href="/tags/objective-c/" rel="tag"><i class="icon-next-tags"></i>objective-c</a>
-            
-              <a href="/tags/hopper/" rel="tag"><i class="icon-next-tags"></i>hopper</a>
-            
-          </span>
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>在iOS应用开发和线上运行的过程中，我们总会被反馈到各种各样的崩溃。很多崩溃通过case的描述，就能很快的重现并得到修复，但是更多的崩溃也许这一辈子就发生这么一次，也许我们永远不知道它什么时候再会出现。</p>
-<p>同时，就算我们捕获到一个Crash栈，由于版本环境等种种原因，或者发生崩溃的代码我们就无法得到它详细的源码，我们往往会对着一片全是程序指令偏移量的Crash栈一脸蒙蔽。<br>基于以上事实，我们需要从Crash栈的捕获和分析这两个角度进行深入的了解。</p>
-<p>本博客主要内容分为两部分：</p>
-<ul>
-<li>OC中的Crash异常的总结和捕获方法</li>
-<li>利用Hopper对Crash栈进行分析</li>
-</ul>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/03/23/lrdcq/ios-crash-catch-and-analyze/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2017/03/16/TinySymphony/electronic-apps/" itemprop="url">
-                Electron开发跨平台桌面应用
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2017-03-16T11:25:57+08:00" content="2017-03-16">
-            2017-03-16
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 作者
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/TinySymphony/" itemprop="url" rel="index">
-                  <span itemprop="name">TinySymphony</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-
-        <!-- tags 挪动位置 -->
-        
-          <span class="post-tags">
-            &nbsp; | &nbsp;
-            
-              <a href="/tags/electron/" rel="tag"><i class="icon-next-tags"></i>electron</a>
-            
-              <a href="/tags/atom/" rel="tag"><i class="icon-next-tags"></i>atom</a>
-            
-          </span>
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>在国内<code>All in mobile</code>的风气下谈论桌面客户端开发似乎是个很非主流的行为，但是作为JavaScript在桌面端伸出的利爪，<code>Electron</code>不仅仅是快速开发跨平台桌面客户端的一个技术选型，也有着其独特的象征意义~</p>
-<p>本文主要介绍<code>Electron</code>的应用结构、开发方式以及优缺点。在重温Electron开发的过程中写了个山寨的Mac版网易云音乐，这是<a href="https://github.com/Tinysymphony/electronic-netease-music" target="_blank" rel="noopener">demo地址</a></p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/03/16/TinySymphony/electronic-apps/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2017/03/03/wangweitao/AliActivityRouter/" itemprop="url">
-                ActivityRouter
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2017-03-03T00:00:00+08:00" content="2017-03-03">
-            2017-03-03
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 作者
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/wangweitao/" itemprop="url" rel="index">
-                  <span itemprop="name">wangweitao</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-
-        <!-- tags 挪动位置 -->
-        
-          <span class="post-tags">
-            &nbsp; | &nbsp;
-            
-              <a href="/tags/Andorid/" rel="tag"><i class="icon-next-tags"></i>Andorid</a>
-            
-              <a href="/tags/Activity-Router/" rel="tag"><i class="icon-next-tags"></i>Activity Router</a>
-            
-          </span>
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>android通过在intent中指定目标类名和参数实现界面之间的跳转。这种写法在activity数量少、跳转简单、开发人员较少时效果好。</p>
-<p> 如果遇到activity数量较多、跳转复杂、多人协作开发、长期的修改的情况，则可以通过activityRouter来解耦合、管理跳转逻辑等。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/03/03/wangweitao/AliActivityRouter/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2017/03/02/zhouxiong/Vue2.0+Vue-resource+Express-Server/" itemprop="url">
-                Vue2.0+Vue-resource+Express搭建简书网站服务端
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2017-03-02T00:00:00+08:00" content="2017-03-02">
-            2017-03-02
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 作者
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/zhouxiong/" itemprop="url" rel="index">
-                  <span itemprop="name">zhouxiong</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-
-        <!-- tags 挪动位置 -->
-        
-          <span class="post-tags">
-            &nbsp; | &nbsp;
-            
-              <a href="/tags/Vue2-0/" rel="tag"><i class="icon-next-tags"></i>Vue2.0</a>
-            
-              <a href="/tags/Vue-resource/" rel="tag"><i class="icon-next-tags"></i>Vue-resource</a>
-            
-              <a href="/tags/Express/" rel="tag"><i class="icon-next-tags"></i>Express</a>
-            
-          </span>
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>继上一篇文章<a href="http://xgfe.github.io/2016/12/22/zhouxiong/Vue2.0+Vue-router2.0+Vuex2.0/">Vue2.0+Vue-router2.0+Vuex2.0搭建简书</a>，该文章主要讲述简书网站的前端搭建过程。本篇文章将重点讲述简书网站的服务端搭建，服务端主要通过Express启动一个本地server处理请求，将数据保存至数据库中。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/03/02/zhouxiong/Vue2.0+Vue-resource+Express-Server/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2017/02/24/zhiqin/RxJava_zip_Observable_carefully/" itemprop="url">
-                RxJava 谨慎串联Observable
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2017-02-24T17:21:34+08:00" content="2017-02-24">
-            2017-02-24
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 作者
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/zhiqin/" itemprop="url" rel="index">
-                  <span itemprop="name">zhiqin</span>
+                <a href="/categories/ivanchou/" itemprop="url" rel="index">
+                  <span itemprop="name">ivanchou</span>
                 </a>
               </span>
 
@@ -906,7 +334,7 @@
             
               <a href="/tags/Android/" rel="tag"><i class="icon-next-tags"></i>Android</a>
             
-              <a href="/tags/RxJava/" rel="tag"><i class="icon-next-tags"></i>RxJava</a>
+              <a href="/tags/布局/" rel="tag"><i class="icon-next-tags"></i>布局</a>
             
           </span>
         
@@ -920,9 +348,9 @@
 
       
         
-          <p>RxJava提供了flatMap和switchMap两个操作符用于让我们进行Observable的串联. 但如果不谨慎使用的话, 经常会造成很多意料之外的问题</p>
+          <p>关于 ConstraintLayout 的 xml 方式布局的介绍有很多，但是你知道 ConstraintSet 吗？<br>本文对于 ConstraintLayout 采用代码进行布局的方式进行了介绍。</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/24/zhiqin/RxJava_zip_Observable_carefully/#more" rel="contents">
+            <a class="btn" href="/2017/09/17/ivanchou/layout-with-constraintlayout-by-programming/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -954,8 +382,8 @@
           
           
             
-              <a class="post-title-link" href="/2017/02/23/cocoawang/IOS-confused-attribute/" itemprop="url">
-                IOS confused attribute Part 1
+              <a class="post-title-link" href="/2017/09/07/felix/html-parsing-and-resources-load/" itemprop="url">
+                HTML解析和资源加载
               </a>
             
           
@@ -965,8 +393,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-02-23T12:00:37+08:00" content="2017-02-23">
-            2017-02-23
+          <time itemprop="dateCreated" datetime="2017-09-07T11:00:00+08:00" content="2017-09-07">
+            2017-09-07
           </time>
         </span>
 
@@ -975,8 +403,8 @@
             &nbsp; | &nbsp; 作者
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/Cocoa/" itemprop="url" rel="index">
-                  <span itemprop="name">Cocoa</span>
+                <a href="/categories/felix/" itemprop="url" rel="index">
+                  <span itemprop="name">felix</span>
                 </a>
               </span>
 
@@ -996,7 +424,7 @@
           <span class="post-tags">
             &nbsp; | &nbsp;
             
-              <a href="/tags/ios/" rel="tag"><i class="icon-next-tags"></i>ios</a>
+              <a href="/tags/html/" rel="tag"><i class="icon-next-tags"></i>html</a>
             
           </span>
         
@@ -1010,9 +438,10 @@
 
       
         
-          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本文对IOS中易混淆的两组属性：frame和bounds、id和instancetype，结合实例做了简单分析总结，学习区分和正确使用。<br>
+          <p>学习浏览器的内部工作原理将有助于您作出更明智的决策，并理解那些最佳开发实践的个中缘由。</p>
+<p>本文主要针对WebKit内核的浏览器。</p>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/23/cocoawang/IOS-confused-attribute/#more" rel="contents">
+            <a class="btn" href="/2017/09/07/felix/html-parsing-and-resources-load/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1044,8 +473,8 @@
           
           
             
-              <a class="post-title-link" href="/2017/02/17/shsoul/我是如何实现IOS原生弹窗效果的/" itemprop="url">
-                我是如何实现IOS原生弹窗效果的
+              <a class="post-title-link" href="/2017/09/07/huanglifen/html2image/" itemprop="url">
+                如何将html保存成图片
               </a>
             
           
@@ -1055,8 +484,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2017-02-17T12:10:21+08:00" content="2017-02-17">
-            2017-02-17
+          <time itemprop="dateCreated" datetime="2017-09-07T00:00:00+08:00" content="2017-09-07">
+            2017-09-07
           </time>
         </span>
 
@@ -1065,8 +494,8 @@
             &nbsp; | &nbsp; 作者
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/shsoul/" itemprop="url" rel="index">
-                  <span itemprop="name">shsoul</span>
+                <a href="/categories/huanglifen/" itemprop="url" rel="index">
+                  <span itemprop="name">huanglifen</span>
                 </a>
               </span>
 
@@ -1086,9 +515,11 @@
           <span class="post-tags">
             &nbsp; | &nbsp;
             
-              <a href="/tags/IOS/" rel="tag"><i class="icon-next-tags"></i>IOS</a>
+              <a href="/tags/html2canvas/" rel="tag"><i class="icon-next-tags"></i>html2canvas</a>
             
-              <a href="/tags/UI/" rel="tag"><i class="icon-next-tags"></i>UI</a>
+              <a href="/tags/canvas2image/" rel="tag"><i class="icon-next-tags"></i>canvas2image</a>
+            
+              <a href="/tags/html2image/" rel="tag"><i class="icon-next-tags"></i>html2image</a>
             
           </span>
         
@@ -1102,9 +533,557 @@
 
       
         
-          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>本文主要是讲解如何封装一个具有原生UI效果的弹窗的。</p>
+          <p>如何将HTML保存成高清图片？本文带你一探究竟。<br>
           <div class="post-more-link text-center">
-            <a class="btn" href="/2017/02/17/shsoul/我是如何实现IOS原生弹窗效果的/#more" rel="contents">
+            <a class="btn" href="/2017/09/07/huanglifen/html2image/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2017/08/28/DaisyXL/ES6/" itemprop="url">
+                ES6项目构建
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2017-08-28T00:00:00+08:00" content="2017-08-28">
+            2017-08-28
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 作者
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/DaisyXL/" itemprop="url" rel="index">
+                  <span itemprop="name">DaisyXL</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+
+        <!-- tags 挪动位置 -->
+        
+          <span class="post-tags">
+            &nbsp; | &nbsp;
+            
+              <a href="/tags/javascript/" rel="tag"><i class="icon-next-tags"></i>javascript</a>
+            
+              <a href="/tags/ES6/" rel="tag"><i class="icon-next-tags"></i>ES6</a>
+            
+          </span>
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>本文主要结合自己学习ES6的过程，说明了如何从零开始搭建一个ES6前端框架，并在大家都很关注的彩票业务中进行应用。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/08/28/DaisyXL/ES6/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2017/07/10/lulutia/immutable-RN-Redux/" itemprop="url">
+                基于React-Native及Redux的Immutable.js引入
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2017-07-10T20:07:00+08:00" content="2017-07-10">
+            2017-07-10
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 作者
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/lulutia/" itemprop="url" rel="index">
+                  <span itemprop="name">lulutia</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+
+        <!-- tags 挪动位置 -->
+        
+          <span class="post-tags">
+            &nbsp; | &nbsp;
+            
+              <a href="/tags/React-Native/" rel="tag"><i class="icon-next-tags"></i>React Native</a>
+            
+              <a href="/tags/React/" rel="tag"><i class="icon-next-tags"></i>React</a>
+            
+              <a href="/tags/optimization/" rel="tag"><i class="icon-next-tags"></i>optimization</a>
+            
+          </span>
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>本文主要介绍了如何对RN项目进行render count的优化，着重介绍了Immutable.js及其如何与Redux和React Native融合。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/07/10/lulutia/immutable-RN-Redux/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2017/06/28/lulutia/reactnative02/" itemprop="url">
+                React Native 学习系列二
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2017-06-28T22:03:12+08:00" content="2017-06-28">
+            2017-06-28
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 作者
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/lulutia/" itemprop="url" rel="index">
+                  <span itemprop="name">lulutia</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+
+        <!-- tags 挪动位置 -->
+        
+          <span class="post-tags">
+            &nbsp; | &nbsp;
+            
+              <a href="/tags/React-Native/" rel="tag"><i class="icon-next-tags"></i>React Native</a>
+            
+          </span>
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>本文是React Native学习系列的第二篇，主要介绍了JSX、生命周期、以ScrollView为例讲解了官方组件、以BackHandler为例讲解了官方API。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/06/28/lulutia/reactnative02/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2017/06/26/zero/Looper和Handler和HandlerThread/" itemprop="url">
+                Looper和Handler和HandlerThread
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2017-06-26T00:00:00+08:00" content="2017-06-26">
+            2017-06-26
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 作者
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/zero/" itemprop="url" rel="index">
+                  <span itemprop="name">zero</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+
+        <!-- tags 挪动位置 -->
+        
+          <span class="post-tags">
+            &nbsp; | &nbsp;
+            
+              <a href="/tags/android/" rel="tag"><i class="icon-next-tags"></i>android</a>
+            
+          </span>
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>本文主要分析了Looper，Handler和HandlerThread的主要源码部分。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/06/26/zero/Looper和Handler和HandlerThread/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2017/06/26/zero/OKIO源码分析/" itemprop="url">
+                OKIO源码分析
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2017-06-26T00:00:00+08:00" content="2017-06-26">
+            2017-06-26
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 作者
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/zero/" itemprop="url" rel="index">
+                  <span itemprop="name">zero</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+
+        <!-- tags 挪动位置 -->
+        
+          <span class="post-tags">
+            &nbsp; | &nbsp;
+            
+              <a href="/tags/java/" rel="tag"><i class="icon-next-tags"></i>java</a>
+            
+              <a href="/tags/IO/" rel="tag"><i class="icon-next-tags"></i>IO</a>
+            
+          </span>
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>本文主要分析了OKIO源码中用到的Timeout，Buffer和设计模式。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/06/26/zero/OKIO源码分析/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2017/06/22/lulutia/reactnative01/" itemprop="url">
+                React Native 学习系列一
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2017-06-22T21:12:00+08:00" content="2017-06-22">
+            2017-06-22
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 作者
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/lulutia/" itemprop="url" rel="index">
+                  <span itemprop="name">lulutia</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+
+        <!-- tags 挪动位置 -->
+        
+          <span class="post-tags">
+            &nbsp; | &nbsp;
+            
+              <a href="/tags/React-Native/" rel="tag"><i class="icon-next-tags"></i>React Native</a>
+            
+          </span>
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>本文是React Native学习系列的第一篇，主要介绍了React Native产生的背景、环境搭建、文件结构及如何使用Flex布局进行样式搭建。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/06/22/lulutia/reactnative01/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1129,13 +1108,10 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/">&raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/7/">&raquo;</a>
   </nav>
 
  </div>
-
-        
-
         
       </div>
 
@@ -1163,21 +1139,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">105</span>
+              <span class="site-state-item-count">119</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">55</span>
+              <span class="site-state-item-count">66</span>
               <span class="site-state-item-name">作者</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">161</span>
+              <span class="site-state-item-count">179</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -1224,7 +1200,7 @@
       <div class="footer-inner"> <div class="copyright" >
   
   &copy; &nbsp; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>
@@ -1248,23 +1224,30 @@
 
     <div class="back-to-top"></div>
   </div>
-
+  <script type="text/javascript" src="/vendors/gitmint.browser.js"></script>
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
   
   
-    <script type="text/javascript"> 
-(function(){ 
-var appid = 'cysWiXvkm'; 
-var conf = 'prod_fc970dbe85103c7a79b2c4f3dc7fb190'; 
-var width = window.innerWidth || document.documentElement.clientWidth; 
-if (width < 960) { 
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
-    
-
-  
-
+    <script type="text/javascript">
+  let name = window.location.href;
+  let idArray = name.split('/');
+  let id = idArray[idArray.length - 2];
+  id = id.slice(0, 20);
+  const gitment = new Gitmint({
+    id: id,
+    owner: 'xgfe',
+    admin: ['lulutia', 'Catherine33'],
+    repo: 'xgfe.github.io',
+    oauth: {
+      redirect_protocol: 'https',
+      client_id: '23cc0db4fc1491f8ae2e',
+      client_secret: '13f4c4623bf8acb0479801903c80a71fdff0350e',
+    }
+  })
+  gitment.render('comments')
+</script>
 
   
   
@@ -1301,7 +1284,6 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
   
 
-  
   
 
   

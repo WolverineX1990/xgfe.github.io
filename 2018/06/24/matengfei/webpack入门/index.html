@@ -40,7 +40,7 @@
 <meta property="og:site_name" content="xgfe">
 <meta property="og:description" content="Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过loader的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、AMD 模块、ES6 模块、CSS、图片、JSON、Coffeescript、LESS 等。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-06T11:56:44.285Z">
+<meta property="og:updated_time" content="2020-02-19T11:04:25.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack 入门">
 <meta name="twitter:description" content="Webpack 是当下最热门的前端资源模块化管理和打包工具。它可以将许多松散的模块按照依赖和规则打包成符合生产环境部署的前端资源。还可以将按需加载的模块进行代码分隔，等到实际需要的时候再异步加载。通过loader的转换，任何形式的资源都可以视作模块，比如 CommonJs 模块、AMD 模块、ES6 模块、CSS、图片、JSON、Coffeescript、LESS 等。">
@@ -54,6 +54,7 @@
 </script>
 
   <title> webpack 入门 | xgfe </title>
+  <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -147,7 +148,7 @@
       
       <!-- slide-links added by felix -->
       <li class="menu-item menu-item-slides" style="opacity: 1; transform: translateY(0px);">
-        <a href="http://xgfe.github.io/Basics/" target="_blank" rel="section">
+        <a href="https://xgfe.github.io/Basics/" target="_blank" rel="section">
           <i class="menu-item-icon icon-next-slides"></i> <br>
           Basics
         </a>
@@ -427,7 +428,7 @@
 <h3 id="公共chunk-用于-入口chunk-entry-chunk"><a href="#公共chunk-用于-入口chunk-entry-chunk" class="headerlink" title="公共chunk 用于 入口chunk (entry chunk)"></a>公共chunk 用于 入口chunk (entry chunk)</h3><p>生成一个额外的 chunk 包含入口 chunk 的公共模块。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</span><br><span class="line">  name: <span class="string">"commons"</span>,</span><br><span class="line">  <span class="comment">// ( 公共chunk(commnons chunk) 的名称)</span></span><br><span class="line"></span><br><span class="line">  filename: <span class="string">"commons.js"</span>,</span><br><span class="line">  <span class="comment">// ( 公共chunk 的文件名)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// minChunks: 3,</span></span><br><span class="line">  <span class="comment">// (模块必须被3个 入口 chunk 共享)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// chunks: ["pageA", "pageB"],</span></span><br><span class="line">  <span class="comment">// (只使用这些 入口chunk)</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>你必须在 入口 chunk 之前加载生成的这个公共 chunk:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"commons.js"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">"entry.bundle.js"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"commons.js"</span> charset=<span class="string">"utf-8"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"entry.bundle.js"</span> charset=<span class="string">"utf-8"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <h3 id="明确第三方库-chunk"><a href="#明确第三方库-chunk" class="headerlink" title="明确第三方库 chunk"></a>明确第三方库 chunk</h3><p>将你的代码拆分成公共代码和应用代码。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">entry: &#123;</span><br><span class="line">  vendor: [<span class="string">"jquery"</span>, <span class="string">"other-lib"</span>],</span><br><span class="line">  app: <span class="string">"./entry"</span></span><br><span class="line">&#125;,</span><br><span class="line">plugins: [</span><br><span class="line">  <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</span><br><span class="line">    name: <span class="string">"vendor"</span>,</span><br><span class="line">    <span class="comment">// filename: "vendor.js"</span></span><br><span class="line">    <span class="comment">// (给 chunk 一个不同的名字)</span></span><br><span class="line"></span><br><span class="line">    minChunks: <span class="literal">Infinity</span>,</span><br><span class="line">    <span class="comment">// (随着 entry chunk 越来越多，</span></span><br><span class="line">    <span class="comment">// 这个配置保证没其它的模块会打包进 vendor chunk)</span></span><br><span class="line">  &#125;)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <h3 id="将公共模块打包进父-chunk"><a href="#将公共模块打包进父-chunk" class="headerlink" title="将公共模块打包进父 chunk"></a>将公共模块打包进父 chunk</h3><p>使用代码拆分功能，一个 chunk 的多个子 chunk 会有公共的依赖。为了防止重复，可以将这些公共模块移入父 chunk。这会减少总体的大小，但会对首次加载时间产生不良影响。如果预期到用户需要下载许多兄弟 chunks（例如，入口 trunk 的子 chunk），那这对改善加载时间将非常有用。</p>
@@ -529,7 +530,7 @@
 <p>这里配置了一个 paths ，主要是需找 html 模板，purifycss 根据这个配置会遍历你的文件，查找哪些css 被使用了。</p>
 <p>配置好上边的代码，我们可以故意在 css 文件里写一些用不到的属性，然后用 webpack 打包，你会发现没用的 CSS 已经自动给你删除掉了。在工作中记得一定要配置这个 plugins ，因为这决定你代码的质量，非常有用。</p>
 <h2 id="3-7-文件处理"><a href="#3-7-文件处理" class="headerlink" title="3.7 文件处理"></a>3.7 文件处理</h2><h3 id="图片处理"><a href="#图片处理" class="headerlink" title="图片处理"></a>图片处理</h3><p>在 index.html 文件中增加一个放置 div 的标签</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"tupian"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"tupian"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>编写 css 文件，把图片作为背景显示。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#tupian&#123;</span><br><span class="line">   background-image: url(../images/manhua.png);</span><br><span class="line">   width:<span class="number">466</span>px;</span><br><span class="line">   height:<span class="number">453</span>px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>安装 file-loader 和 url-loader</p>
@@ -567,7 +568,7 @@
 <p>打包中会遇到的问题就是路径不对，可以通过配置 publicPath 解决。</p>
 <h3 id="Json-配置文件使用"><a href="#Json-配置文件使用" class="headerlink" title="Json 配置文件使用"></a>Json 配置文件使用</h3><p>在实际工作中，我们的项目都会配置一个 Json 的文件或者说 API 文件，作为项目的配置文件。有时候你也会从后台读取到一个 json 的文件，这节课就学习如何在 webpack 环境中使用 Json。如果你会 webpack1 或者 webpack2 版本中，你是需要加载一个 json-loader 的 loader 进来的，但是在webpack3.x 版本中，你不再需要另外引入了。</p>
 <p>读出 Json 内容<br>第一步：现在我们的 index.html 模板中加入一个层，并给层一个 Id，为了是在 javascript 代码中可以方便引用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"json"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"json"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>第二步：到 src 文件夹下，找到入口文件，我这里是 entry.js 文件。修改里边的代码，如下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> json =<span class="built_in">require</span>(<span class="string">'../config.json'</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"json"</span>).innerHTML= json.name;</span><br></pre></td></tr></table></figure>
 <p>这两行代码非常简单，第一行是引入我们的 json 文件，第二行驶写入到到 DOM 中。</p>
@@ -669,7 +670,7 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/11/guanxiaofeng/Dayjs/" rel="prev">Day.js 源码学习</a>
+              <a href="/2018/07/04/wanglibin/category与Extension相关知识/" rel="prev">Category 与Extension 相关知识</a>
             
           </div>
 
@@ -717,13 +718,8 @@
   </div>
 
  </div>
-
         
-
-        
-          <div class="comments" id="comments">
-            <div id="SOHUCS" sid="" ></div>
-          </div>
+          <div id="comments" class="article-info article-info-index"></div>
         
       </div>
 
@@ -760,21 +756,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">105</span>
+              <span class="site-state-item-count">119</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">55</span>
+              <span class="site-state-item-count">66</span>
               <span class="site-state-item-name">作者</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">161</span>
+              <span class="site-state-item-count">179</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -832,7 +828,7 @@
       <div class="footer-inner"> <div class="copyright" >
   
   &copy; &nbsp; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>
@@ -856,23 +852,30 @@
 
     <div class="back-to-top"></div>
   </div>
-
+  <script type="text/javascript" src="/vendors/gitmint.browser.js"></script>
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
   
   
-    <script type="text/javascript"> 
-(function(){ 
-var appid = 'cysWiXvkm'; 
-var conf = 'prod_fc970dbe85103c7a79b2c4f3dc7fb190'; 
-var width = window.innerWidth || document.documentElement.clientWidth; 
-if (width < 960) { 
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
-    
-
-  
-
+    <script type="text/javascript">
+  let name = window.location.href;
+  let idArray = name.split('/');
+  let id = idArray[idArray.length - 2];
+  id = id.slice(0, 20);
+  const gitment = new Gitmint({
+    id: id,
+    owner: 'xgfe',
+    admin: ['lulutia', 'Catherine33'],
+    repo: 'xgfe.github.io',
+    oauth: {
+      redirect_protocol: 'https',
+      client_id: '23cc0db4fc1491f8ae2e',
+      client_secret: '13f4c4623bf8acb0479801903c80a71fdff0350e',
+    }
+  })
+  gitment.render('comments')
+</script>
 
   
   
@@ -1068,7 +1071,6 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
   
 
-  
   
 
   

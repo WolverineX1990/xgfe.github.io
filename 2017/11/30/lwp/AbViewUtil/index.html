@@ -24,7 +24,7 @@
   <meta name="description" content="xgfe's blog. 鲜果前端的技术博客，鲜果前端研发部官方博客。前端基础技术研究：html, html5, javascript, css, css3；前端框架研究：angularJs, react, react native." />
 
 
-  <meta name="keywords" content="Android,适配," />
+  <meta name="keywords" content="android,适配," />
 
 
   <link rel="alternate" target="_blank" href="/atom.xml" title="xgfe" type="application/atom+xml" />
@@ -33,14 +33,14 @@
   <link rel="shorticon icon" type="image/x-icon" href="http://p0.meituan.net/xgfe/2db359f56ce13be30dedef160e0e57ce16958.ico?v=0.4.5.1" />
 
 <meta name="description" content="抛弃 google 提供的 dip 理论与多套图片与布局方案，采用与 UI 设计师通用的 px 作为标准单位，原理是将 UI 设计师的设计图与当前查看的手机或其他设备的屏幕像素尺寸进行换算，得到缩放比例，在 Activity 中装载布局时将所有布局的 px 尺寸进行缩放后设置给布局，就实现了一套尺寸在不同大小的设备上能够按照合理的比例进行缩放，达到万能适配的目的。">
-<meta name="keywords" content="Android,适配">
+<meta name="keywords" content="android,适配">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AbViewUtil屏幕适配方法">
 <meta property="og:url" content="http://xgfe.github.io/2017/11/30/lwp/AbViewUtil/index.html">
 <meta property="og:site_name" content="xgfe">
 <meta property="og:description" content="抛弃 google 提供的 dip 理论与多套图片与布局方案，采用与 UI 设计师通用的 px 作为标准单位，原理是将 UI 设计师的设计图与当前查看的手机或其他设备的屏幕像素尺寸进行换算，得到缩放比例，在 Activity 中装载布局时将所有布局的 px 尺寸进行缩放后设置给布局，就实现了一套尺寸在不同大小的设备上能够按照合理的比例进行缩放，达到万能适配的目的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-24T03:48:57.249Z">
+<meta property="og:updated_time" content="2020-02-19T11:04:25.653Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AbViewUtil屏幕适配方法">
 <meta name="twitter:description" content="抛弃 google 提供的 dip 理论与多套图片与布局方案，采用与 UI 设计师通用的 px 作为标准单位，原理是将 UI 设计师的设计图与当前查看的手机或其他设备的屏幕像素尺寸进行换算，得到缩放比例，在 Activity 中装载布局时将所有布局的 px 尺寸进行缩放后设置给布局，就实现了一套尺寸在不同大小的设备上能够按照合理的比例进行缩放，达到万能适配的目的。">
@@ -54,6 +54,7 @@
 </script>
 
   <title> AbViewUtil屏幕适配方法 | xgfe </title>
+  <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -147,7 +148,7 @@
       
       <!-- slide-links added by felix -->
       <li class="menu-item menu-item-slides" style="opacity: 1; transform: translateY(0px);">
-        <a href="http://xgfe.github.io/Basics/" target="_blank" rel="section">
+        <a href="https://xgfe.github.io/Basics/" target="_blank" rel="section">
           <i class="menu-item-icon icon-next-slides"></i> <br>
           Basics
         </a>
@@ -236,7 +237,7 @@
           <span class="post-tags">
             &nbsp; | &nbsp;
             
-              <a href="/tags/Android/" rel="tag"><i class="icon-next-tags"></i>Android</a>
+              <a href="/tags/android/" rel="tag"><i class="icon-next-tags"></i>android</a>
             
               <a href="/tags/适配/" rel="tag"><i class="icon-next-tags"></i>适配</a>
             
@@ -347,13 +348,8 @@
   </div>
 
  </div>
-
         
-
-        
-          <div class="comments" id="comments">
-            <div id="SOHUCS" sid="" ></div>
-          </div>
+          <div id="comments" class="article-info article-info-index"></div>
         
       </div>
 
@@ -390,21 +386,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">105</span>
+              <span class="site-state-item-count">119</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">55</span>
+              <span class="site-state-item-count">66</span>
               <span class="site-state-item-name">作者</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">161</span>
+              <span class="site-state-item-count">179</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -462,7 +458,7 @@
       <div class="footer-inner"> <div class="copyright" >
   
   &copy; &nbsp; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>
@@ -486,23 +482,30 @@
 
     <div class="back-to-top"></div>
   </div>
-
+  <script type="text/javascript" src="/vendors/gitmint.browser.js"></script>
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
   
   
-    <script type="text/javascript"> 
-(function(){ 
-var appid = 'cysWiXvkm'; 
-var conf = 'prod_fc970dbe85103c7a79b2c4f3dc7fb190'; 
-var width = window.innerWidth || document.documentElement.clientWidth; 
-if (width < 960) { 
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
-    
-
-  
-
+    <script type="text/javascript">
+  let name = window.location.href;
+  let idArray = name.split('/');
+  let id = idArray[idArray.length - 2];
+  id = id.slice(0, 20);
+  const gitment = new Gitmint({
+    id: id,
+    owner: 'xgfe',
+    admin: ['lulutia', 'Catherine33'],
+    repo: 'xgfe.github.io',
+    oauth: {
+      redirect_protocol: 'https',
+      client_id: '23cc0db4fc1491f8ae2e',
+      client_secret: '13f4c4623bf8acb0479801903c80a71fdff0350e',
+    }
+  })
+  gitment.render('comments')
+</script>
 
   
   
@@ -698,7 +701,6 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
   
 
-  
   
 
   
